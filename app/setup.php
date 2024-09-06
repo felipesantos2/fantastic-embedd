@@ -28,13 +28,6 @@ function fantastic_embedd_enqueue(): void
     );
 }
 
-add_shortcode('fembed', 'fantastic_embedd_shortcode');
-
-function fantastic_embedd_shortcode(): void
-{
-    require_once plugin_dir_path(__DIR__) . 'app/templates/index.php';
-}
-
 add_action('init', 'fantastic_embedd_files_post_type');
 
 function fantastic_embedd_files_post_type()
@@ -53,6 +46,14 @@ function fantastic_embedd_files_post_type()
             'rewrite'   => array('slug' => 'fan-files'),
             'menu_position' => 5,
             'menu_icon' => 'dashicons-food',
-        )
+        ),
     );
 }
+
+add_shortcode('fembed', 'fantastic_embedd_shortcode');
+
+function fantastic_embedd_shortcode(): void
+{
+    require_once plugin_dir_path(__DIR__) . 'app/templates/index.php';
+}
+
