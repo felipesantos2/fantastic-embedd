@@ -26,7 +26,6 @@ function fantastic_embedd_enqueue(): void
         '1.' . rand(),
         true,
     );
-
 }
 
 add_shortcode('fembed', 'fantastic_embedd_shortcode');
@@ -34,4 +33,26 @@ add_shortcode('fembed', 'fantastic_embedd_shortcode');
 function fantastic_embedd_shortcode(): void
 {
     require_once plugin_dir_path(__DIR__) . 'app/templates/index.php';
+}
+
+add_action('init', 'fantastic_embedd_files_post_type');
+
+function fantastic_embedd_files_post_type()
+{
+    register_post_type(
+        'fan-files',
+        array(
+            'labels' => array(
+                'name' => __('Files'),
+                'singular_name' => __('File')
+            ),
+            'public' => true,
+            'show_in_rest' => true,
+            'supports' => array('title', 'editor'),
+            'has_archive' => true,
+            'rewrite'   => array('slug' => 'fan-files'),
+            'menu_position' => 5,
+            'menu_icon' => 'dashicons-food',
+        )
+    );
 }
