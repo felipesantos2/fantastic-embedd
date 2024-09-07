@@ -45,7 +45,7 @@ function fantastic_embedd_files_post_type()
             'has_archive' => true,
             'rewrite'   => array('slug' => 'fan-files'),
             'menu_position' => 5,
-            'menu_icon' => 'dashicons-food',
+            'menu_icon' => 'dashicons-buddicons-replies',
         ),
     );
 }
@@ -54,6 +54,7 @@ add_shortcode('fembed', 'fantastic_embedd_shortcode');
 
 function fantastic_embedd_shortcode(): void
 {
-    require_once plugin_dir_path(__DIR__) . 'app/templates/index.php';
+    require_once plugin_dir_path(__DIR__) . 'app/functions/get-posts.php';
+    require_once plugin_dir_path(__DIR__) . 'app/templates/template.php';
 }
 
