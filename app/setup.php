@@ -30,7 +30,7 @@ function fantastic_embedd_enqueue(): void
 
 add_action('init', 'fantastic_embedd_files_post_type');
 
-function fantastic_embedd_files_post_type()
+function fantastic_embedd_files_post_type(): void
 {
     register_post_type(
         'fan-files',
