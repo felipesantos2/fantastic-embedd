@@ -1,4 +1,4 @@
-<table class="border overflow-x-scroll rounded-lg">
+<table class="overflow-x-scroll border rounded-lg">
     <caption class="caption-top">
         Medicamentos
     </caption>
@@ -18,8 +18,8 @@
             echo '<td class="p-2">#2</td>';
             echo '<td class="p-2">
                         <div class="cursor-pointer">
-                            <a>
-                                <img class="max-w-full h-auto w-28 rounded-lg"
+                            <a href="#">
+                                <img class="h-auto max-w-full rounded-lg w-28"
                                     src="https://plus.unsplash.com/premium_photo-1724668132059-480d6a34bbf4?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     alt="Post sobre' . get_the_title() . '" title="' . get_the_title() . '">
                             </a>
